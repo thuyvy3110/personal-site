@@ -30,5 +30,5 @@ ReactDOM.render(
       <Route component={NotFound} status={404} />
     </Switch>
   </Router>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
