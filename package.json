@@ -4,7 +4,9 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon server/server.js --ignore app/ --ignore test/ --exec babel-node"
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server/server.js --ignore app/ --ignore test/ --exec babel-node",
+    "dev": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@babel/cli": "^7.5.5",
