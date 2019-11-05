@@ -3,8 +3,8 @@
   "homepage": "https://github.com/mldangelo/personal-site",
   "version": "1.0.1",
   "private": true,
-  "scripts": {
-    "start": "node -r @babel/register  ./node_modules/webpack/bin/webpack --config ./webpack/webpack.production.config.js --progress --profile --colors && rimraf ./dist && mv ./tmp ./dist",
+  "scripts": {    
+    "build": "node -r @babel/register  ./node_modules/webpack/bin/webpack --config ./webpack/webpack.production.config.js --progress --profile --colors && rimraf ./dist && mv ./tmp ./dist",
     "build-dev": "rimraf ./dist && babel-node ./node_modules/webpack/bin/webpack --config ./webpack/webpack.config.js --progress --profile --colors",
     "clean": "rimraf ./dist && rimraf ./tmp",
     "lint": "./node_modules/.bin/eslint app server test webpack",
@@ -12,7 +12,8 @@
     "dev": "nodemon server/server.js --ignore app/ --ignore test/ --exec babel-node",
     "parse-routes": "node -r @babel/register parseRoutes.js",
     "predeploy": "npm run build && cp -r public/* dist/ && cp dist/index.html dist/404.html && npm run parse-routes",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start": "npm run dev"
   },
     "engines": {
     "node": ">=7.6.0",
